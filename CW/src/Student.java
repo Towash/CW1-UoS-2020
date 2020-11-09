@@ -19,18 +19,18 @@ public class Student extends Character {
 	void javaProgramming(Character enemy) {
 		this.increaseEP(3);
 		this.increaseKP(1);
-		enemy.currentHP -= (int) Math.round((100 * this.getMaxAtk()) / (100 + enemy.getMaxDef()));
+		enemy.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
 		enemy.increaseEP(2);
 
 		// Checks if the enemy is an instance of the Student class;
 		// Increases its KP if it is.
-		
+
 		// TODO Check another way instead of using instanceof
 		if (enemy instanceof Student)
 			((Student) enemy).increaseKP(3);
 
 		// Checks if the enemy will be killed after the attack and awards EP if yes.
-		if (enemy.currentHP <= 0)
+		if (enemy.getHP() == 0)
 			this.increaseEP(4);
 	}
 
@@ -40,16 +40,16 @@ public class Student extends Character {
 		this.increaseKP(2);
 	}
 
-	//getKP methods to keep encapsulation
+	// getKP methods to keep encapsulation
 	int getCurrentKP() {
 		return this.currentKP;
 	}
-	
+
 	int getMaxKP() {
 		return this.maxKP;
 	}
-	
-	//Resets the character's KP to 0 (Used this to preserve encapsulation)
+
+	// Resets the character's KP to 0 (Used this to preserve encapsulation)
 	void resetKP() {
 		this.currentKP = 0;
 	}

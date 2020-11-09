@@ -5,23 +5,29 @@ public class CSStudent extends Student {
 	}
 
 	// pairWorking attack that allows two students to attack the same enemy.
-	void pairWorking(Character friend, Character enemy) {
+	void pairWorking(Character friend, Character enemy) throws Exception {
 		if (this.getCurrentKP() == this.getMaxKP()) {
-			enemy.currentHP -= (int) Math.round((100 * friend.getMaxAtk()) / (100 + enemy.getMaxDef()));
-			enemy.currentHP -= (int) Math.round((100 * this.getMaxAtk()) / (100 + enemy.getMaxDef()));
+			enemy.decreaseHP((100 * friend.getAttack()) / (100 + enemy.getDefence()));
+			enemy.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
 
-			// TODO Maybe NullKP again.
-			this.resetKP();
-		}
-	}
+			// Checks if the enemy will be killed after the attack and awards EP if yes.
+			if (enemy.getHP() == 0)
+				this.increaseEP(4);
 
-	// support skill that heals a friend based on the CS's defence.
-	void support(Character friend) {
-		if (this.getCurrentKP() == this.getMaxKP()) {
-			// TODO Again - same shit
 			this.increaseEP(4);
 			this.resetKP();
-			friend.increaseHP(this.getMaxDef());
-		}
+		} else
+			throw new Exception("Not enough KP");
+	}
+
+	// support skill that heals a friend based on the CS's defense.
+	void support(Character friend) throws Exception {
+		if (this.getCurrentKP() == this.getMaxKP()) {
+
+			this.increaseEP(4);
+			this.resetKP();
+			friend.increaseHP(this.getDefence());
+		} else
+			throw new Exception("Not enough KP");
 	}
 }

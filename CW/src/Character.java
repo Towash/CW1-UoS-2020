@@ -2,8 +2,8 @@ public class Character {
 	String name;
 	int baseHP, baseAtk, baseDef, baseSpd;
 	int level = 1;
-	int currentHP = baseHP;
 	int currentEP = 0;
+	int currentHP;
 	Team team;
 
 	// Basic constructor nothing to explain here wish ya a nice day!
@@ -13,6 +13,7 @@ public class Character {
 		this.baseAtk = baseAtk;
 		this.baseDef = baseDef;
 		this.baseSpd = baseSpd;
+		this.currentHP = getMaxHP();
 	}
 
 	String getName() {
@@ -21,20 +22,20 @@ public class Character {
 
 	// Have to use (int) because the round() method returns a long and we don't want
 	// that.
-	//TODO try to find another way;
+	// TODO try to find another way;
 	int getMaxHP() {
 		return (int) Math.round(baseHP * Math.pow(level, 1.2));
 	}
 
-	int getMaxAtk() {
+	int getAttack() {
 		return (int) Math.round(baseAtk * Math.pow(level, 1.2));
 	}
 
-	int getMaxDef() {
+	int getDefence() {
 		return (int) Math.round(baseDef * Math.pow(level, 1.2));
 	}
 
-	int getMaxSpd() {
+	int getSpeed() {
 		return (int) Math.round(baseSpd * Math.pow(level, 1.2));
 	}
 
@@ -72,8 +73,8 @@ public class Character {
 			currentEP = 0;
 		}
 	}
-	
-	//Getter/Setter for the team.
+
+	// Getter/Setter for the team.
 	void setTeam(Team team) {
 		this.team = team;
 	}
