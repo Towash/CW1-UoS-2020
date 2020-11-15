@@ -5,7 +5,7 @@ public class CyberStudent extends Student {
 	}
 
 	// cyberAttack that attacks all of the characters in the enemy team
-	void cyberAttack(Team enemyTeam) throws Exception {
+	public void cyberAttack(Team enemyTeam) throws Exception {
 		if (this.getCurrentKP() == this.getMaxKP()) {
 
 			Character[] members = enemyTeam.getMembers();

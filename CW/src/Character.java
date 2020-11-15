@@ -16,56 +16,56 @@ public class Character {
 		this.currentHP = getMaxHP();
 	}
 
-	String getName() {
+	public String getName() {
 		return name;
 	}
 
 	// Have to use (int) because the round() method returns a long and we don't want
 	// that.
 	// TODO try to find another way;
-	int getMaxHP() {
+	public int getMaxHP() {
 		return (int) Math.round(baseHP * Math.pow(level, 1.2));
 	}
 
-	int getAttack() {
+	public int getAttack() {
 		return (int) Math.round(baseAtk * Math.pow(level, 1.2));
 	}
 
-	int getDefence() {
+	public int getDefence() {
 		return (int) Math.round(baseDef * Math.pow(level, 1.2));
 	}
 
-	int getSpeed() {
+	public int getSpeed() {
 		return (int) Math.round(baseSpd * Math.pow(level, 1.2));
 	}
 
-	int getTargetEP() {
+	public int getTargetEP() {
 		return (int) Math.round(10 * Math.pow(level, 1.5));
 	}
 
 	// Getters for HP/EP
-	int getHP() {
+	public int getHP() {
 		return currentHP;
 	}
 
-	int getEP() {
+	public int getEP() {
 		return currentEP;
 	}
 
 	// HP/EP manipulation functions
-	void increaseHP(int amount) {
+	public void increaseHP(int amount) {
 		currentHP += amount;
 		if (currentHP > getMaxHP())
 			currentHP = getMaxHP();
 	}
 
-	void decreaseHP(int amount) {
+	public  void decreaseHP(int amount) {
 		currentHP -= amount;
 		if (currentHP < 0)
 			currentHP = 0;
 	}
 
-	void increaseEP(int amount) {
+	public void increaseEP(int amount) {
 		currentEP += amount;
 		if (currentEP >= getTargetEP()) {
 			level++;
@@ -75,11 +75,11 @@ public class Character {
 	}
 
 	// Getter/Setter for the team.
-	void setTeam(Team team) {
+	public void setTeam(Team team) {
 		this.team = team;
 	}
 
-	Team getTeam() {
+	public Team getTeam() {
 		return team;
 	}
 }

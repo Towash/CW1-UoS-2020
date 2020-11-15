@@ -5,7 +5,7 @@ public class SEStudent extends Student {
 	}
 
 	// groupWork attack - All alive members of the team attack the enemy.
-	void groupWork(Character enemy) throws Exception {
+	public void groupWork(Character enemy) throws Exception {
 		if (this.getCurrentKP() == this.getMaxKP()) {
 			Character[] members = this.getTeam().getMembers();
 			for (Character member : members) {
@@ -25,7 +25,7 @@ public class SEStudent extends Student {
 	}
 
 	// groupDiscussion heals all alive team members.
-	void groupDiscussion() throws Exception {
+	public void groupDiscussion() throws Exception {
 		if (this.getCurrentKP() == this.getMaxKP()) {
 			if (this.getCurrentKP() == this.getMaxKP()) {
 				Character[] members = this.getTeam().getMembers();

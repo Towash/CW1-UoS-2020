@@ -10,13 +10,13 @@ public class Student extends Character {
 		this.maxKP = maxKP;
 	}
 
-	void increaseKP(int amount) {
+	public void increaseKP(int amount) {
 		currentKP += amount;
 		if (currentKP > maxKP)
 			currentKP = maxKP;
 	}
 
-	void javaProgramming(Character enemy) {
+	public void javaProgramming(Character enemy) {
 		this.increaseEP(3);
 		this.increaseKP(1);
 		enemy.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
@@ -25,7 +25,6 @@ public class Student extends Character {
 		// Checks if the enemy is an instance of the Student class;
 		// Increases its KP if it is.
 
-		// TODO Check another way instead of using instanceof
 		if (enemy instanceof Student)
 			((Student) enemy).increaseKP(3);
 
@@ -34,23 +33,23 @@ public class Student extends Character {
 			this.increaseEP(4);
 	}
 
-	void selfStudy() {
+	public void selfStudy() {
 		this.increaseHP(2);
 		this.increaseEP(6);
 		this.increaseKP(2);
 	}
 
 	// getKP methods to keep encapsulation
-	int getCurrentKP() {
+	public int getCurrentKP() {
 		return this.currentKP;
 	}
 
-	int getMaxKP() {
+	public int getMaxKP() {
 		return this.maxKP;
 	}
 
 	// Resets the character's KP to 0 (Used this to preserve encapsulation)
-	void resetKP() {
+	public void resetKP() {
 		this.currentKP = 0;
 	}
 }

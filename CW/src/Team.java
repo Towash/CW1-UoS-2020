@@ -11,18 +11,18 @@ public class Team {
 	}
 
 	// Nothing to see here, just a getter.
-	String getName() {
+	public String getName() {
 		return name;
 	}
 
 	// Method that converts the ArrayList to an array using the ArrayList.toArray().
-	Character[] getMembers() {
+	public Character[] getMembers() {
 		Character[] membersArray = members.toArray(new Character[members.size()]);
 		return membersArray;
 	}
 
 
-	int addMember(Character member) {
+	public int addMember(Character member) {
 		Character[] tempMembers = getMembers();
 		//Checks if there is already a member with this name in the Team.
 		//There is probably a better way to do that but oh well.
