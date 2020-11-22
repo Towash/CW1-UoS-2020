@@ -4,17 +4,19 @@ public class CyberStudent extends Student {
 		super(name, 7, 7, 5, 6, 6);
 	}
 
-	// cyberAttack that attacks all of the characters in the enemy team
+	// cyberAttack that attacks all of the ALIVE characters in the enemy team
 	public void cyberAttack(Team enemyTeam) throws Exception {
-		if (this.getCurrentKP() == this.getMaxKP()) {
+		if (this.hasMaxKP()) {
 
 			Character[] members = enemyTeam.getMembers();
 			for (Character member : members) {
-				member.decreaseHP((100 * this.getAttack()) / (100 + member.getDefence()));
+				if (member.isAlive()) {
+					member.decreaseHP((100 * this.getAttack()) / (100 + member.getDefence()));
 
-				// Checks if the enemy will be killed after the attack and awards EP if yes.
-				if (member.getHP() == 0)
-					this.increaseEP(4);
+					// Checks if the enemy will be killed after the attack and awards EP if yes.
+					if (!member.isAlive())
+						this.increaseEP(4);
+				}
 			}
 
 			this.increaseEP(4);

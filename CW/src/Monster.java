@@ -8,5 +8,4 @@ public interface Monster {
 	void ArrayIndexOutOfBoundException(Character enemy);
 	void NoneTermination();
 	void ConcurrentModificationException(Character enemy);
-	
 }

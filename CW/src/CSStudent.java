@@ -6,12 +6,12 @@ public class CSStudent extends Student {
 
 	// pairWorking attack that allows two students to attack the same enemy.
 	public void pairWorking(Character friend, Character enemy) throws Exception {
-		if (this.getCurrentKP() == this.getMaxKP()) {
+		if (this.hasMaxKP()) {
 			enemy.decreaseHP((100 * friend.getAttack()) / (100 + enemy.getDefence()));
 			enemy.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
 
 			// Checks if the enemy will be killed after the attack and awards EP if yes.
-			if (enemy.getHP() == 0)
+			if (!enemy.isAlive())
 				this.increaseEP(4);
 
 			this.increaseEP(4);
@@ -22,7 +22,7 @@ public class CSStudent extends Student {
 
 	// support skill that heals a friend based on the CS's defense.
 	public void support(Character friend) throws Exception {
-		if (this.getCurrentKP() == this.getMaxKP()) {
+		if (this.hasMaxKP()) {
 
 			this.increaseEP(4);
 			this.resetKP();

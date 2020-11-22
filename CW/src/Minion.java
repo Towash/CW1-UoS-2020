@@ -21,10 +21,9 @@ public class Minion extends Character implements Monster {
 			NullPointerException();
 		else
 			ArrayIndexOutOfBoundException(enemy);
-
 	}
-	
-	//The basic attack of the Monster deals damage like JavaProgramming();
+
+	// The basic attack of the Monster deals damage like JavaProgramming();
 	@Override
 	public void SyntaxError(Character enemy) {
 		enemy.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
@@ -32,37 +31,41 @@ public class Minion extends Character implements Monster {
 		enemy.increaseEP(3);
 
 		if (enemy instanceof Student) {
-			((Student) enemy).increaseKP(4);
+			((Student) enemy).increaseKP(3);
 		}
 
-		if (enemy.getHP() == 0)
+		if (!enemy.isAlive())
 			this.increaseEP(4);
 	}
 
-	//Heals the Monster by its defence stat.
+	// Heals the Monster by its defense stat.
 	@Override
 	public void NullPointerException() {
 		this.increaseHP(this.getDefence());
 	}
 
-	//Attack dealing double damage.
+	// Attack dealing double damage.
 	@Override
 	public void ArrayIndexOutOfBoundException(Character enemy) {
 		enemy.decreaseHP((((100 * this.getAttack()) / (100 + enemy.getDefence())) * 2));
 		enemy.increaseEP(3);
 
 		if (enemy instanceof Student) {
-			((Student) enemy).increaseKP(4);
+			((Student) enemy).increaseKP(3);
 		}
 
-		if (enemy.getHP() == 0)
+		if (!enemy.isAlive())
 			this.increaseEP(4);
 	}
 
-	//Empty because they are exclusively Boss attacks but the implement requires them.
+	// Empty because they are exclusively Boss attacks but the implement requires
+	// them.
 	@Override
-	public void NoneTermination() {}
+	public void NoneTermination() {
+	}
+
 	@Override
-	public void ConcurrentModificationException(Character enemy) {}
+	public void ConcurrentModificationException(Character enemy) {
+	}
 
 }

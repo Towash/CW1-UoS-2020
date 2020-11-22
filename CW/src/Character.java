@@ -59,18 +59,21 @@ public class Character {
 			currentHP = getMaxHP();
 	}
 
-	public  void decreaseHP(int amount) {
+	public void decreaseHP(int amount) {
 		currentHP -= amount;
 		if (currentHP < 0)
 			currentHP = 0;
 	}
 
 	public void increaseEP(int amount) {
+		//If the character levels up and they are alive they get healed to MaxHP.
 		currentEP += amount;
 		if (currentEP >= getTargetEP()) {
 			level++;
-			currentHP = getMaxHP();
-			currentEP = 0;
+			if (this.isAlive()) {
+				currentHP = getMaxHP();
+				currentEP = 0;
+			}
 		}
 	}
 
@@ -82,4 +85,19 @@ public class Character {
 	public Team getTeam() {
 		return team;
 	}
+
+	// Checks if the character is alive. Exists because we will use that a lot
+	public boolean isAlive() {
+		if (this.getHP() > 0) {
+			return true;
+		} else
+			return false;
+	}
+	
+	//Checks if the student has above 50% health - Will be used in the move() method
+		public boolean HPAbove50() {
+			if(this.getHP() >= this.getMaxHP()/2)
+				return true;
+			else return false;
+		}
 }

@@ -7,11 +7,11 @@ public class AIStudent extends Student {
 
 	// Machine learning attack that deals double damage.
 	public void machineLearning(Character enemy) throws Exception {
-		if (this.getCurrentKP() == this.getMaxKP()) {
+		if (this.hasMaxKP()) {
 			enemy.decreaseHP((((100 * this.getAttack()) / (100 + enemy.getDefence())) * 2));
 
 			// Checks if the enemy will be killed after the attack and awards EP if yes.
-			if (enemy.getHP() == 0)
+			if (!enemy.isAlive())
 				this.increaseEP(4);
 
 			this.increaseEP(4);
@@ -20,11 +20,10 @@ public class AIStudent extends Student {
 			throw new Exception("Not enough KP");
 	}
 
-	// Skill that allows the character to heal themselves
+	// Skill that allows the AIStudent to heal itself
 	public void naturalLanguageProcessing() throws Exception {
-		if (this.getCurrentKP() == this.getMaxKP()) {
+		if (this.hasMaxKP()) {
 			this.increaseHP(this.getDefence());
-			// TODO maybe create a reduceKP/nullKP method for encapsulation.
 			this.increaseEP(4);
 			this.resetKP();
 		} else

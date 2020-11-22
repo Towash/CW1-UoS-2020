@@ -26,7 +26,7 @@ public class Boss extends Character implements Monster {
 			ConcurrentModificationException(enemy);
 	}
 
-	//The basic attack of the Monster deals damage like JavaProgramming();
+	// The basic attack of the Monster deals damage like JavaProgramming();
 	@Override
 	public void SyntaxError(Character enemy) {
 		enemy.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
@@ -34,10 +34,10 @@ public class Boss extends Character implements Monster {
 		enemy.increaseEP(3);
 
 		if (enemy instanceof Student) {
-			((Student) enemy).increaseKP(4);
+			((Student) enemy).increaseKP(3);
 		}
 
-		if (enemy.getHP() == 0)
+		if (!enemy.isAlive())
 			this.increaseEP(4);
 	}
 
@@ -46,7 +46,6 @@ public class Boss extends Character implements Monster {
 	@Override
 	public void NullPointerException() {
 		this.increaseHP(this.getDefence());
-
 	}
 
 	// Attack dealing double damage.
@@ -56,12 +55,11 @@ public class Boss extends Character implements Monster {
 		enemy.increaseEP(3);
 
 		if (enemy instanceof Student) {
-			((Student) enemy).increaseKP(4);
+			((Student) enemy).increaseKP(3);
 		}
 
-		if (enemy.getHP() == 0)
+		if (!enemy.isAlive())
 			this.increaseEP(4);
-
 	}
 
 	// Revives all members of the team.
@@ -69,11 +67,9 @@ public class Boss extends Character implements Monster {
 	public void NoneTermination() {
 		Character[] members = this.getTeam().getMembers();
 		for (Character member : members) {
-			if (member.getHP() == 0)
+			if (member.isAlive())
 				member.increaseHP(member.getMaxHP());
-
 		}
-
 	}
 
 	// Attacks all members of the enemy team.
@@ -81,21 +77,20 @@ public class Boss extends Character implements Monster {
 	public void ConcurrentModificationException(Character enemy) {
 		Character[] members = enemy.getTeam().getMembers();
 		for (Character member : members) {
-			if (member.getHP() > 0) {
+			if (member.isAlive()) {
 
 				member.increaseEP(3);
 
 				if (member instanceof Student) {
-					((Student) member).increaseKP(4);
+					((Student) member).increaseKP(3);
 				}
 				member.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
 
-				if (member.getHP() == 0) {
+				if (!member.isAlive()) {
 					this.increaseEP(4);
 				}
 			}
 		}
-
 	}
 
 }

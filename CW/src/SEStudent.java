@@ -6,10 +6,10 @@ public class SEStudent extends Student {
 
 	// groupWork attack - All alive members of the team attack the enemy.
 	public void groupWork(Character enemy) throws Exception {
-		if (this.getCurrentKP() == this.getMaxKP()) {
+		if (this.hasMaxKP()) {
 			Character[] members = this.getTeam().getMembers();
 			for (Character member : members) {
-				if (member.getHP() > 0)
+				if (member.isAlive())
 					enemy.decreaseHP((100 * member.getAttack()) / (100 + enemy.getDefence()));
 			}
 
@@ -17,7 +17,7 @@ public class SEStudent extends Student {
 			this.resetKP();
 
 			// Checks if the enemy will be killed after the attack and awards EP if yes.
-			if (enemy.getHP() == 0)
+			if (!enemy.isAlive())
 				this.increaseEP(4);
 		} else
 			throw new Exception("Not enough KP");
@@ -26,12 +26,12 @@ public class SEStudent extends Student {
 
 	// groupDiscussion heals all alive team members.
 	public void groupDiscussion() throws Exception {
-		if (this.getCurrentKP() == this.getMaxKP()) {
-			if (this.getCurrentKP() == this.getMaxKP()) {
+		if (this.hasMaxKP()) {
+			if (this.hasMaxKP()) {
 				Character[] members = this.getTeam().getMembers();
 
 				for (Character member : members) {
-					if (member.getHP() > 0)
+					if (member.isAlive())
 						member.increaseHP(this.getDefence() / 2);
 				}
 

@@ -29,7 +29,7 @@ public class Student extends Character {
 			((Student) enemy).increaseKP(3);
 
 		// Checks if the enemy will be killed after the attack and awards EP if yes.
-		if (enemy.getHP() == 0)
+		if (!enemy.isAlive())
 			this.increaseEP(4);
 	}
 
@@ -52,4 +52,12 @@ public class Student extends Character {
 	public void resetKP() {
 		this.currentKP = 0;
 	}
+	
+	//Checks if a character has maxKP so they can perform a special attack
+	public boolean hasMaxKP() {
+		if(this.getCurrentKP()==this.getMaxKP())
+			return true;
+		else return false;
+	}
+	
 }
