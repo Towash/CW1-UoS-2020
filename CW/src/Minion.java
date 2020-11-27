@@ -1,5 +1,9 @@
 import java.util.Random;
 
+/**
+ * @author Daniel Valchev
+ *
+ */
 public class Minion extends Character implements Monster {
 
 	// Constructor for the minion class

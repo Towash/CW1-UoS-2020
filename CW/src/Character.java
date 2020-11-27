@@ -1,4 +1,8 @@
-public class Character {
+/**
+ * @author Daniel Valchev
+ *
+ */
+public class Character implements Comparable<Character> {
 	String name;
 	int baseHP, baseAtk, baseDef, baseSpd;
 	int level = 1;
@@ -66,7 +70,7 @@ public class Character {
 	}
 
 	public void increaseEP(int amount) {
-		//If the character levels up and they are alive they get healed to MaxHP.
+		// If the character levels up and they are alive they get healed to MaxHP.
 		currentEP += amount;
 		if (currentEP >= getTargetEP()) {
 			level++;
@@ -86,6 +90,10 @@ public class Character {
 		return team;
 	}
 
+	public int getLevel() {
+		return level;
+	}
+
 	// Checks if the character is alive. Exists because we will use that a lot
 	public boolean isAlive() {
 		if (this.getHP() > 0) {
@@ -93,11 +101,22 @@ public class Character {
 		} else
 			return false;
 	}
-	
-	//Checks if the student has above 50% health - Will be used in the move() method
-		public boolean HPAbove50() {
-			if(this.getHP() >= this.getMaxHP()/2)
-				return true;
-			else return false;
-		}
+
+	// Checks if the student has above 50% health - Will be used in the move()
+	// method
+	public boolean HPAbove50() {
+		if (this.getHP() >= this.getMaxHP() / 2)
+			return true;
+		else
+			return false;
+	}
+
+	// Compares the characters based on their speed in the descending order.
+	// See - Comparable javadoc.
+	@Override
+	public int compareTo(Character character) {
+		int compareSpeed = character.getSpeed();
+		return compareSpeed - this.getSpeed();
+	}
+
 }

@@ -1,4 +1,8 @@
 
+/**
+ * @author Daniel Valchev
+ *
+ */
 public class CyberStudent extends Student {
 	CyberStudent(String name) {
 		super(name, 7, 7, 5, 6, 6);

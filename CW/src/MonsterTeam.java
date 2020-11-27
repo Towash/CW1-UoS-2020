@@ -1,4 +1,8 @@
 
+/**
+ * @author Daniel Valchev
+ *
+ */
 public class MonsterTeam extends Team {
 
 	MonsterTeam(String name) {

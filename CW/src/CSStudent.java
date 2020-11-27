@@ -1,4 +1,8 @@
 
+/**
+ * @author Daniel Valchev
+ *
+ */
 public class CSStudent extends Student {
 	CSStudent(String name) {
 		super(name, 7, 6, 6, 6, 4);
@@ -31,3 +35,4 @@ public class CSStudent extends Student {
 			throw new Exception("Not enough KP");
 	}
 }
+

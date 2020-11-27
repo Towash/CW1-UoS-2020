@@ -1,4 +1,8 @@
 
+/**
+ * @author Daniel Valchev
+ *
+ */
 public class AIStudent extends Student {
 
 	AIStudent(String name) {

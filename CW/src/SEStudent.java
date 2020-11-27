@@ -1,4 +1,8 @@
 
+/**
+ * @author Daniel Valchev
+ *
+ */
 public class SEStudent extends Student {
 	SEStudent(String name) {
 		super(name, 8, 5, 8, 4, 10);

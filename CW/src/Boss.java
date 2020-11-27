@@ -1,5 +1,9 @@
 import java.util.Random;
 
+/**
+ * @author Daniel Valchev
+ *
+ */
 public class Boss extends Character implements Monster {
 
 	Boss(String name) {

@@ -1,4 +1,8 @@
 //TODO: Add comments explaining the logic behind the AI of each class
+/**
+ * @author Daniel Valchev
+ *
+ */
 public class StudentTeam extends Team {
 
 	StudentTeam(String name) {
@@ -136,7 +140,7 @@ public class StudentTeam extends Team {
 
 	/*
 	 * Checks if more than one person on the team needs healing Will be used in
-	 * SEStudents groupDiscussion
+	 * SEStudents groupDiscussion 
 	 */
 	public boolean friendsNeedHealing(Character member) {
 		int counter = 0; // number of friends that need healing

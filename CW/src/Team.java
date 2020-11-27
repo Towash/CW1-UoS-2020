@@ -1,5 +1,8 @@
-import java.util.ArrayList;
-
+import java.util.ArrayList; 
+/**
+ * @author Daniel Valchev
+ *
+ */
 public abstract class Team {
 	String name;
 	ArrayList<Character> members;
