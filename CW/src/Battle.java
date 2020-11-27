@@ -20,7 +20,7 @@ public class Battle {
 
 	public Team fight() throws Exception {
 
-		System.out.println("The battle between Team: " + team1.getName() + " and Team: " + team2.getName() + "begins!");
+		System.out.println("The battle between Team: " + team1.getName() + " and Team: " + team2.getName() + " begins!");
 		System.out.println();
 
 		// 30 Max Rounds
