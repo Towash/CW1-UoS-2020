@@ -58,7 +58,7 @@ public class Battle {
 	public void displayTeams() {
 		System.out.println("Team: " + team1.getName());
 		for (Character member : team1.getMembers()) {
-			System.out.println(member.getName() + ", HP: " + member.getHP() + " LVL:" + member.getLevel() + " SPD:"
+			System.out.println(member.getName() + " " + member.getHP() +"/" + member.getMaxHP() +"HP" + " LVL:" + member.getLevel() + " SPD:"
 					+ member.getSpeed());
 		}
 
@@ -66,7 +66,7 @@ public class Battle {
 
 		System.out.println("Team: " + team2.getName());
 		for (Character member : team2.getMembers()) {
-			System.out.println(member.getName() + ", HP: " + member.getHP() + "  LVL:" + member.getLevel() + " SPD:"
+			System.out.println(member.getName() + " " + member.getHP() +"/" + member.getMaxHP() +"HP" + "  LVL:" + member.getLevel() + " SPD:"
 					+ member.getSpeed());
 		}
 		System.out.println();

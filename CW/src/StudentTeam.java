@@ -46,7 +46,6 @@ public class StudentTeam extends Team {
 			else {
 				((CSStudent) member).javaProgramming(getLeastTanky(enemyTeam));
 			}
-
 		}
 		// CyberStudent
 		else if (member instanceof CyberStudent) {
@@ -140,7 +139,7 @@ public class StudentTeam extends Team {
 
 	/*
 	 * Checks if more than one person on the team needs healing Will be used in
-	 * SEStudents groupDiscussion 
+	 * SEStudents groupDiscussion
 	 */
 	public boolean friendsNeedHealing(Character member) {
 		int counter = 0; // number of friends that need healing
