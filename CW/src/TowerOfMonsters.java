@@ -9,10 +9,10 @@ import java.lang.reflect.*;
  */
 public class TowerOfMonsters {
 	
-	private Guild monsterGuild;
-	private BufferedReader reader;
+	private static Guild monsterGuild;
+	private static BufferedReader reader;
 	
-	public void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
 		
 		File filename = null;
 		
@@ -41,9 +41,10 @@ public class TowerOfMonsters {
 	}
 	
 	//Creates a character based on the txt file.
-	public void addCharacters() throws Exception {
+	public static void addCharacters() throws Exception {
 		
-		//Have fun commenting this one sucker.
+		//TODO:Have fun commenting this one sucker.
+		//Nice varargs.
 			String line = reader.readLine();
 			while(line != null) {
 				int i=0;
