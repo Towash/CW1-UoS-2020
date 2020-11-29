@@ -22,7 +22,6 @@ public class StudentTeam extends Team {
 
 			} else {
 				((AIStudent) member).javaProgramming(getLeastTanky(enemyTeam));
-
 			}
 		}
 
@@ -30,7 +29,7 @@ public class StudentTeam extends Team {
 		else if (member instanceof CSStudent) {
 			if (((CSStudent) member).hasMaxKP()) {
 				for (Character mem : member.getTeam().getMembers()) {
-					if (mem.HPAbove50()) {
+					if (!mem.HPAbove50()) {
 						((CSStudent) member).support(mem);
 						break;
 					}

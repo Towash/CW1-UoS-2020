@@ -42,6 +42,10 @@ public abstract class Team {
 		member.setTeam(this);
 		return members.size();
 	}
+	
+	public void removeMember(Character member) {
+		members.remove(member);
+	}
 
 	//Checks if the team has more than 1 alive member.
 	//Will be used with the CSStudent

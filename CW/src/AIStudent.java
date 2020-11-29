@@ -33,5 +33,4 @@ public class AIStudent extends Student {
 		} else
 			throw new Exception("Not enough KP");
 	}
-
 }

@@ -6,9 +6,16 @@ import java.util.Random;
  */
 public class Minion extends Character implements Monster {
 
-	// Constructor for the minion class
 	Minion(String name) {
 		super(name, 5, 5, 5, 5);
+	}
+
+	// For part 6, creates a new minions that might be more than level 1.
+	// And ensures they start with maxHP.
+	Minion(String name, int level) {
+		super(name, 5, 5, 5, 5);
+		this.setLevel(level);
+		this.increaseHP(getMaxHP()); //Wont go over max due to how getMaxHP is made.
 	}
 
 	// Strike method that calls the different attacks depending on RNG

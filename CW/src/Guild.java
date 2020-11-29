@@ -12,7 +12,6 @@ public class Guild {
 		members = new ArrayList<Character>();
 	}
 	
-	
 	public void addMember(Character member) {
 		members.add(member);
 	}
@@ -21,7 +20,9 @@ public class Guild {
 		return this.members;
 	}
 	
-	
+	public void removeMember(Character member) {
+		members.remove(member);
+	}
 	
 	//Adds the first 5 members of the Guild to the team because i couldn't be bothered to create an algorithm for that.
 	public Team getTeam(Team enemyTeam) {

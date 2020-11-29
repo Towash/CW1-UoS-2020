@@ -10,6 +10,14 @@ public class Boss extends Character implements Monster {
 		super(name, 8, 7, 8, 7);
 	}
 
+	// For part 6, creates a new boss that might be more than level 1.
+	// And ensures they start with maxHP.
+	Boss(String name, int level) {
+		super(name, 8, 7, 8, 7);
+		this.setLevel(level);
+		this.increaseHP(getMaxHP()); //Wont go over max due to how getMaxHP is made.
+	}
+
 	// Strike method that calls the different attacks depending on RNG
 	@Override
 	public void strike(Character enemy) {
@@ -96,5 +104,5 @@ public class Boss extends Character implements Monster {
 			}
 		}
 	}
-
+//You've found an easter egg! Congratulations and keep on pogging.
 }

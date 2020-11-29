@@ -105,7 +105,7 @@ public class Character implements Comparable<Character> {
 	// Checks if the student has above 50% health - Will be used in the move()
 	// method
 	public boolean HPAbove50() {
-		if (this.getHP() >= this.getMaxHP() / 2)
+		if (this.getHP() >= this.getMaxHP() / 2 && this.isAlive())
 			return true;
 		else
 			return false;
@@ -119,4 +119,8 @@ public class Character implements Comparable<Character> {
 		return compareSpeed - this.getSpeed();
 	}
 
+	//Used in part 6 when creating a new monster that is higher than level 1.
+	public void setLevel(int a) {
+		this.level=a;
+	}
 }
