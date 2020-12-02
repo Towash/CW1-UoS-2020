@@ -9,7 +9,7 @@ import java.lang.reflect.*;
  */
 public class TowerOfMonsters {
 	
-	private static Guild monsterGuild;
+	private static Guild monsterGuild = new Guild();
 	private static BufferedReader reader;
 	
 	public static void main(String[] args) throws Exception {
@@ -33,7 +33,7 @@ public class TowerOfMonsters {
 		try {
 			reader = new BufferedReader(new FileReader(filename));
 		} catch (FileNotFoundException e) {
-			System.out.println("Could not open file" + filename);
+			System.out.println("Could not open file " + filename);
 			e.printStackTrace();
 		}
 		
@@ -45,15 +45,20 @@ public class TowerOfMonsters {
 		
 		//TODO:Have fun commenting this one sucker.
 		//Nice varargs.
-			String line = reader.readLine();
-			while(line != null) {
+			String line;
+			while((line = reader.readLine()) != null) {
 				int i=0;
-				String[] components = line.split(";");
-				Class<?> c = Class.forName(components[1+i]);
-				Constructor<?> cons = c.getConstructor(String.class, int.class);
+				
+				String[] components = line.split("\\(|\\,|\\);|\\)");
+				
+				do {
+				Class<?> c = Class.forName(components[1]);
+				Constructor<?> cons = c.getDeclaredConstructor(String.class, int.class);
 				
 				monsterGuild.addMember((Character) cons.newInstance(components[0+i].toString(),Integer.parseInt(components[2+i])));
-				i+=3;		
+				i+=3;
+				}
+				while ((i >= 0) && (i < components.length));
 		}
 	}
 }
