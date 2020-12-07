@@ -57,7 +57,9 @@ public class TowerOfMonsters {
 		}
 		
 		
-		
+		/*
+		 * Creates a battle for every line of the .txt or until the studentGuild has no members left.
+		 */
 		String line;
 		int floor = 1;
 		while ((line = reader.readLine()) != null) {

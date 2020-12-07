@@ -58,8 +58,8 @@ public class Battle {
 			// Checks if there is a winner after every round
 
 		}
-		System.out.println("The battle ended with no winner");
-		return null;
+		
+		throw new Exception("The battle has no clear winner and will continue over the ages");
 	}
 
 	// Displays information about the teams at the beginning of every round
