@@ -15,7 +15,7 @@ public class Minion extends Character implements Monster {
 	Minion(String name, int level) {
 		super(name, 5, 5, 5, 5);
 		this.setLevel(level);
-		this.increaseHP(getMaxHP()); //Wont go over max due to how getMaxHP is made.
+		this.increaseHP(getMaxHP()); // Wont go over max due to how getMaxHP is made.
 	}
 
 	// Strike method that calls the different attacks depending on RNG
@@ -78,5 +78,4 @@ public class Minion extends Character implements Monster {
 	@Override
 	public void ConcurrentModificationException(Character enemy) {
 	}
-
 }

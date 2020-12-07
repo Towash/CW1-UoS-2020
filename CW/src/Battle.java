@@ -6,7 +6,6 @@ import java.util.Arrays;
  *
  */
 public class Battle {
-	boolean winner = false;
 	Team team1;
 	Team team2;
 	Character[] allCharacters; // Array of allCharacters - used for the fight method.
@@ -54,11 +53,7 @@ public class Battle {
 					}
 				}
 			}
-
-			// Checks if there is a winner after every round
-
 		}
-		
 		throw new Exception("The battle has no clear winner and will continue over the ages");
 	}
 
@@ -83,14 +78,10 @@ public class Battle {
 	// Check if there is an established winner returns true if yes.
 	public Team checkWinner() {
 		if (!team1.hasAliveMembers()) {
-			winner = true;
 			return team2;
-
 		} else if (!team2.hasAliveMembers()) {
-			winner = true;
 			return team1;
 		} else {
-			winner = false;
 			return null;
 		}
 	}

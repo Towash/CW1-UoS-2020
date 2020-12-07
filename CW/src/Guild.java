@@ -20,10 +20,6 @@ public class Guild {
 		return this.members;
 	}
 	
-	public void removeMember(Character member) {
-		members.remove(member);
-	}
-	
 	/*
 	 * Adds the first 5 alive members from the guild into the team.
 	 * If there are less it adds however many there are.
