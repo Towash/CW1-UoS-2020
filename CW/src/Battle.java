@@ -20,11 +20,7 @@ public class Battle {
 	}
 
 	public Team fight() throws Exception {
-
-		// System.out.println("The battle between Team: " + team1.getName() + " - and
-		// Team: " + team2.getName() + " - begins!");
 		System.out.println();
-
 		// 30 Max Rounds
 		for (int i = 1; i <= 30; i++) {
 			System.out.println("----------Round " + i + "----------");
@@ -40,14 +36,14 @@ public class Battle {
 					if (c.getTeam().equals(team1)) {
 						c.getTeam().move(c, team2);
 						if (checkWinner() != null) {
-							System.out.println("Team " + checkWinner().getName() + " wins!!");
+							System.out.println("\n Team " + checkWinner().getName() + " wins!!");
 							return checkWinner();
 						}
 
 					} else {
 						c.getTeam().move(c, team1);
 						if (checkWinner() != null) {
-							System.out.println("Team " + checkWinner().getName() + " wins!!");
+							System.out.println("\n Team " + checkWinner().getName() + " wins!!");
 							return checkWinner();
 						}
 					}
@@ -65,14 +61,14 @@ public class Battle {
 					+ member.getLevel() + " SPD:" + member.getSpeed());
 		}
 
-		System.out.println("-----------------------");
+		System.out.println("---------------------------");
 
 		System.out.println("Team: " + team2.getName());
 		for (Character member : team2.getMembers()) {
 			System.out.println(member.getName() + " " + member.getHP() + "/" + member.getMaxHP() + "HP" + "  LVL:"
 					+ member.getLevel() + " SPD:" + member.getSpeed());
 		}
-		System.out.println();
+		System.out.println("\n - Fight! - \n");
 	}
 
 	// Check if there is an established winner returns true if yes.

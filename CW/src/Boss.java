@@ -41,28 +41,28 @@ public class Boss extends Character implements Monster {
 	// The basic attack of the Monster deals damage like JavaProgramming();
 	@Override
 	public void SyntaxError(Character enemy) {
+		System.out.println(this.getName() + " used SyntaxError on " + enemy.getName());
 		enemy.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
-
 		enemy.increaseEP(3);
-
 		if (enemy instanceof Student) {
 			((Student) enemy).increaseKP(3);
 		}
-
 		if (!enemy.isAlive())
 			this.increaseEP(4);
 	}
 
 	// Heals the Monster by its defence stat. (Love how Eclipse says the right way
-	// to spell "Defence" is "defense")
+	// to spell "Defence" is "defense" American vs English will always be fun)
 	@Override
 	public void NullPointerException() {
+		System.out.println(this.getName() + " used NullPointerException and healed itself");
 		this.increaseHP(this.getDefence());
 	}
 
 	// Attack dealing double damage.
 	@Override
 	public void ArrayIndexOutOfBoundException(Character enemy) {
+		System.out.println(this.getName() + " used ArrayIndexOutOfBoundException on " + enemy.getName());
 		enemy.decreaseHP((((100 * this.getAttack()) / (100 + enemy.getDefence())) * 2));
 		enemy.increaseEP(3);
 
@@ -77,9 +77,9 @@ public class Boss extends Character implements Monster {
 	// Revives all members of the team.
 	@Override
 	public void NoneTermination() {
+		System.out.println(this.getName() + " used NoneTermination reviving all its allies!");
 		Character[] members = this.getTeam().getMembers();
 		for (Character member : members) {
-			if (member.isAlive())
 				member.increaseHP(member.getMaxHP());
 		}
 	}
@@ -87,22 +87,20 @@ public class Boss extends Character implements Monster {
 	// Attacks all members of the enemy team.
 	@Override
 	public void ConcurrentModificationException(Character enemy) {
+		System.out.println(this.getName() + " used ConcurrentModificationException attacking all enemies!");
 		Character[] members = enemy.getTeam().getMembers();
 		for (Character member : members) {
 			if (member.isAlive()) {
-
 				member.increaseEP(3);
-
 				if (member instanceof Student) {
 					((Student) member).increaseKP(3);
 				}
 				member.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
-
 				if (!member.isAlive()) {
 					this.increaseEP(4);
 				}
 			}
 		}
 	}
-//You've found an easter egg! Congratulations and keep on pogging.
+//You've found an easter egg! Congratulations!
 }

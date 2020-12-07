@@ -15,12 +15,15 @@ public class StudentTeam extends Team {
 		if (member instanceof AIStudent) {
 			if (((AIStudent) member).hasMaxKP()) {
 				if (((AIStudent) member).HPAbove50()) {
+					 System.out.println(member.getName() + " used MachineLearning on " + getLeastTanky(enemyTeam).getName());
 					((AIStudent) member).machineLearning(getLeastTanky(enemyTeam));
 				} else {
 					((AIStudent) member).naturalLanguageProcessing();
+					System.out.println(member.getName() + " used NaturalLanguageProcessing and healed themselves ");
 				}
 
 			} else {
+				System.out.println(member.getName() + " used JavaProgramming on " + getLeastTanky(enemyTeam).getName());
 				((AIStudent) member).javaProgramming(getLeastTanky(enemyTeam));
 			}
 		}
@@ -30,25 +33,28 @@ public class StudentTeam extends Team {
 			if (((CSStudent) member).hasMaxKP()) {
 				for (Character mem : member.getTeam().getMembers()) {
 					if (!mem.HPAbove50()) {
+						System.out.println(member.getName() + " used Support and healed " + mem.getName());
 						((CSStudent) member).support(mem);
 						break;
 					}
 				}
 			}
-
 			if (((CSStudent) member).hasMaxKP()) {
+				System.out.println(member.getName() + " used PairWorking along with " + maxAttackFriend(member).getName() + " on " + getLeastTanky(enemyTeam).getName());
 					((CSStudent) member).pairWorking(maxAttackFriend(member), getLeastTanky(enemyTeam));
 			}
-
 			else {
+				System.out.println(member.getName() + " used JavaProgramming on " + getLeastTanky(enemyTeam).getName());
 				((CSStudent) member).javaProgramming(getLeastTanky(enemyTeam));
 			}
 		}
 		// CyberStudent
 		else if (member instanceof CyberStudent) {
 			if (((CyberStudent) member).hasMaxKP()) {
+				System.out.println(member.getName() + " used CyberAttack attacking the whole enemy team! ");
 				((CyberStudent) member).cyberAttack(enemyTeam);
 			} else {
+				System.out.println(member.getName() + " used JavaProgramming on " + getLeastTanky(enemyTeam).getName());
 				((CyberStudent) member).javaProgramming(getLeastTanky(enemyTeam));
 			}
 
@@ -58,11 +64,14 @@ public class StudentTeam extends Team {
 		else if (member instanceof SEStudent) {
 			if (((SEStudent) member).hasMaxKP()) {
 				if (friendsNeedHealing(member)) {
+					System.out.println(member.getName() + " used groupDiscussion and healed all allies! ");
 					((SEStudent) member).groupDiscussion();
-				} else
+				} else {
+					System.out.println(member.getName() + " used groupWork on" + getLeastTanky(enemyTeam).getName());
 					((SEStudent) member).groupWork(getLeastTanky(enemyTeam));
-
+				}
 			} else {
+				System.out.println(member.getName() + " used JavaProgramming on " + getLeastTanky(enemyTeam).getName());
 				((SEStudent) member).javaProgramming(getLeastTanky(enemyTeam));
 			}
 		}

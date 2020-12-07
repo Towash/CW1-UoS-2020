@@ -55,7 +55,7 @@ public class TowerOfMonsters {
 		int floor = 1;
 		
 		while ((line = reader.readLine()) != null) {
-			System.out.println("Floor - " + floor + " begins!");
+			System.out.println("\n Floor - " + floor + " begins!");
 			monsterTeam = addMonstersToMonsterTeam(line);
 			studentTeam = studentGuild.getTeam(monsterTeam, teamName1);
 

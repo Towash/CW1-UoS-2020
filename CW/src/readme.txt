@@ -56,6 +56,7 @@ Guild.java
 I have implemented the class - Battle - following the coursework specification.
 
 Battle.java
+- Addded Character[] allCharacters variable to store the characters of both teams.
 - Added a displayTeams() method - which will display both teams characters their hp/MaxHP, level, and speed.
 - Added a checkWinner() method - which checks if each team has alive members and returns the other if not.
 - Decided to end the battle as a stalemate if the rounds were above 30 and throw an exception - however this never happened in testing.
@@ -64,7 +65,10 @@ Battle.java
 I have implemented the class - TowerOfMonsters - following the coursework specification.
 
 -Added a studentGuild variable, teamName1 and teamName2 Strings, and the studentTeam and monsterTeam teams.
+-Also added an int floor to track which floor(line) we are on.
 -File reading is done via a BufferedReader. For each line of the file a new monsterTeam is crated.
 
 -Added an addStudentGuild() method which adds students to the student guild.
--Aed an addMonstersToMonsterTeam(String line) method that takes a line from the .txt and creates a monsterTeam depending on it. (See details in code comments)
+-Added an addMonstersToMonsterTeam(String line) method that takes a line from the .txt and creates a monsterTeam depending on it. (See details in code comments)
+
+In the main method we create a new battle with new teams for each line of the document or until the studentGuild has no alive members yet.

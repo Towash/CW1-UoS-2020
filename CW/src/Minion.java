@@ -37,14 +37,12 @@ public class Minion extends Character implements Monster {
 	// The basic attack of the Monster deals damage like JavaProgramming();
 	@Override
 	public void SyntaxError(Character enemy) {
+		System.out.println(this.getName() + " used SyntaxError on " + enemy.getName());
 		enemy.decreaseHP((100 * this.getAttack()) / (100 + enemy.getDefence()));
-
 		enemy.increaseEP(3);
-
 		if (enemy instanceof Student) {
 			((Student) enemy).increaseKP(3);
 		}
-
 		if (!enemy.isAlive())
 			this.increaseEP(4);
 	}
@@ -52,12 +50,14 @@ public class Minion extends Character implements Monster {
 	// Heals the Monster by its defense stat.
 	@Override
 	public void NullPointerException() {
+		System.out.println(this.getName() + " used NullPointerException and healed itself");
 		this.increaseHP(this.getDefence());
 	}
 
 	// Attack dealing double damage.
 	@Override
 	public void ArrayIndexOutOfBoundException(Character enemy) {
+		System.out.println(this.getName() + " used ArrayIndexOutOfBoundException on " + enemy.getName());
 		enemy.decreaseHP((((100 * this.getAttack()) / (100 + enemy.getDefence())) * 2));
 		enemy.increaseEP(3);
 
