@@ -24,11 +24,18 @@ public class Guild {
 		members.remove(member);
 	}
 	
-	//Adds the first 5 members of the Guild to the team because i couldn't be bothered to create an algorithm for that.
-	public Team getTeam(Team enemyTeam) {
-		Team tempTeam = new StudentTeam("TempTeam");
-		for(int i=0;i<5;i++) {
-			tempTeam.addMember(members.get(i));
+	/*
+	 * Adds the first 5 alive members from the guild into the team.
+	 * If there are less it adds however many there are.
+	 */
+	public Team getTeam(Team enemyTeam, String name) {
+		Team tempTeam = new StudentTeam(name);
+		for(int i=0;i<members.size();i++) {
+			if(members.get(i).isAlive())
+				tempTeam.addMember(members.get(i));
+			if(tempTeam.getSize()==5 || tempTeam.getSize() == members.size()) {
+				break;
+			}
 		}
 		return tempTeam;
 	}

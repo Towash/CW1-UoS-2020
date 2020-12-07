@@ -1,10 +1,12 @@
 
 import java.util.Arrays;
+
 /**
  * @author Daniel Valchev
  *
  */
 public class Battle {
+	boolean winner = false;
 	Team team1;
 	Team team2;
 	Character[] allCharacters; // Array of allCharacters - used for the fight method.
@@ -20,7 +22,8 @@ public class Battle {
 
 	public Team fight() throws Exception {
 
-		System.out.println("The battle between Team: " + team1.getName() + " and Team: " + team2.getName() + " begins!");
+		// System.out.println("The battle between Team: " + team1.getName() + " - and
+		// Team: " + team2.getName() + " - begins!");
 		System.out.println();
 
 		// 30 Max Rounds
@@ -37,18 +40,23 @@ public class Battle {
 					// Checks which team the character is from and attacks the other team.
 					if (c.getTeam().equals(team1)) {
 						c.getTeam().move(c, team2);
+						if (checkWinner() != null) {
+							System.out.println("Team " + checkWinner().getName() + " wins!!");
+							return checkWinner();
+						}
 
 					} else {
 						c.getTeam().move(c, team1);
+						if (checkWinner() != null) {
+							System.out.println("Team " + checkWinner().getName() + " wins!!");
+							return checkWinner();
+						}
 					}
 				}
 			}
 
 			// Checks if there is a winner after every round
-			if (checkWinner() != null) {
-				System.out.println("Team " + checkWinner().getName() + " wins!!");
-				return checkWinner();
-			}
+
 		}
 		System.out.println("The battle ended with no winner");
 		return null;
@@ -58,16 +66,16 @@ public class Battle {
 	public void displayTeams() {
 		System.out.println("Team: " + team1.getName());
 		for (Character member : team1.getMembers()) {
-			System.out.println(member.getName() + " " + member.getHP() +"/" + member.getMaxHP() +"HP" + " LVL:" + member.getLevel() + " SPD:"
-					+ member.getSpeed());
+			System.out.println(member.getName() + " " + member.getHP() + "/" + member.getMaxHP() + "HP" + " LVL:"
+					+ member.getLevel() + " SPD:" + member.getSpeed());
 		}
 
-		System.out.println("--------------------");
+		System.out.println("-----------------------");
 
 		System.out.println("Team: " + team2.getName());
 		for (Character member : team2.getMembers()) {
-			System.out.println(member.getName() + " " + member.getHP() +"/" + member.getMaxHP() +"HP" + "  LVL:" + member.getLevel() + " SPD:"
-					+ member.getSpeed());
+			System.out.println(member.getName() + " " + member.getHP() + "/" + member.getMaxHP() + "HP" + "  LVL:"
+					+ member.getLevel() + " SPD:" + member.getSpeed());
 		}
 		System.out.println();
 	}
@@ -75,10 +83,15 @@ public class Battle {
 	// Check if there is an established winner returns true if yes.
 	public Team checkWinner() {
 		if (!team1.hasAliveMembers()) {
+			winner = true;
 			return team2;
+
 		} else if (!team2.hasAliveMembers()) {
+			winner = true;
 			return team1;
-		} else
+		} else {
+			winner = false;
 			return null;
+		}
 	}
 }

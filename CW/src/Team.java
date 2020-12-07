@@ -12,6 +12,7 @@ public abstract class Team {
 		this.name = name;
 		members = new ArrayList<Character>();
 	}
+	
 
 	// Nothing to see here, just a getter.
 	public String getName() {
@@ -55,12 +56,16 @@ public abstract class Team {
 		for (int i = 0; i < membersArray.length; i++) {
 			if (membersArray[i].isAlive()) {
 				counter++;
-				if (counter >= 2) {
+				if (counter >= 1) {
 					return true;
 				}
 			}
 		}
 		return false;
+	}
+	
+	public int getSize() {
+		return members.size();
 	}
 
 	public abstract void move(Character member, Team enemyTeam) throws Exception;

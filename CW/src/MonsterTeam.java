@@ -7,7 +7,6 @@ public class MonsterTeam extends Team {
 
 	MonsterTeam(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override

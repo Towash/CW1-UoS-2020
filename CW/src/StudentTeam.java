@@ -121,18 +121,16 @@ public class StudentTeam extends Team {
 		int max = 0;
 		int maxi = -1;
 		Character[] membersArray = member.getTeam().getMembers();
-		// Stores the alive member with the highest attack that is not the CSStudent
-		// himself.
+		// Stores the alive member with the highest attack 
 		for (int i = 0; i < membersArray.length; i++) {
-			if (!(member.getName().equals(membersArray[i].getName())) && membersArray[i].isAlive()) {
+			if (membersArray[i].isAlive()) {
 				if (max < membersArray[i].getAttack()) {
 					max = membersArray[i].getAttack();
 					maxi = i;
 				}
 			}
 		}
-		if (maxi == -1)
-			throw new Exception("No alive allies");
+		
 		return membersArray[maxi];
 	}
 
