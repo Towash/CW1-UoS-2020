@@ -80,7 +80,9 @@ public class Boss extends Character implements Monster {
 		System.out.println(this.getName() + " used NoneTermination reviving all its allies!");
 		Character[] members = this.getTeam().getMembers();
 		for (Character member : members) {
+			if(!member.isAlive(){
 				member.increaseHP(member.getMaxHP());
+			}
 		}
 	}
 
