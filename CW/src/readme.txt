@@ -25,6 +25,7 @@ Student.java
 I have implemented the classes - Monster, Minion, Boss - following the coursework specification.
 
 -Used the Random class instead of a Toolbox for the Random number generation.
+-Created a constructor that also takes the level of the monster.
 
 ## Part 4 ##
 I have implemented the classes - MonsterTeam, StudentTeam, Guild - following the coursework specification.

@@ -23,7 +23,7 @@ public class Battle {
 		System.out.println();
 		// 30 Max Rounds
 		for (int i = 1; i <= 30; i++) {
-			System.out.println("----------Round " + i + "----------");
+			System.out.println("\n ----------Round " + i + "----------");
 
 			// Sort all characters depending on their speed in the descending order.
 			// See Character class - compareTo();
@@ -61,7 +61,7 @@ public class Battle {
 					+ member.getLevel() + " SPD:" + member.getSpeed());
 		}
 
-		System.out.println("---------------------------");
+		System.out.println("\n ---------------------------");
 
 		System.out.println("Team: " + team2.getName());
 		for (Character member : team2.getMembers()) {

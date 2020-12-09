@@ -23,7 +23,6 @@ public class Minion extends Character implements Monster {
 	public void strike(Character enemy) {
 		this.increaseEP(3);
 		// Random number used for probabilities
-		// TODO - try to find a better way
 		Random rand = new Random();
 		int rng = rand.nextInt(100);
 		if (rng >= 0 && rng < 75)
