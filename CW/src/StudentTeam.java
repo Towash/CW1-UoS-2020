@@ -1,4 +1,3 @@
-//TODO: Add comments explaining the logic behind the AI of each class
 /**
  * @author Daniel Valchev
  *
@@ -10,6 +9,7 @@ public class StudentTeam extends Team {
 	}
 
 	@Override
+	//The "AI" for each class is explained in the readme file.
 	public void move(Character member, Team enemyTeam) throws Exception {
 		// AIStudent
 		if (member instanceof AIStudent) {
@@ -77,7 +77,6 @@ public class StudentTeam extends Team {
 		}
 	}
 	
-
 	/*
 	 * Used for the CSStudent's pairworking skill in order to get the ally with the
 	 * most attack to attack the enemy

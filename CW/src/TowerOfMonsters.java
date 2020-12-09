@@ -3,13 +3,11 @@ import java.io.FileNotFoundException;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.lang.reflect.*;
-
 /**
  * @author Daniel Valchev
  *
  */
 public class TowerOfMonsters {
-
 	private static boolean monsterWin = false;
 	private static Guild studentGuild = new Guild();
 	private static BufferedReader reader;
@@ -31,7 +29,6 @@ public class TowerOfMonsters {
 			System.out.println("File name not specified.");
 			System.exit(1);
 		}
-
 		// Takes the file as an argument from the command line
 		if (0 < args.length) {
 			filename = new File(args[0]);
@@ -101,7 +98,10 @@ public class TowerOfMonsters {
 	}
 
 	public static void addStudentGuild() {
-		// Did not use a loop on purpose because of the extension I will use.
+		/* 
+		 * Decided that doing it this way is better than with a loop
+		 * because we can make changes easier.
+		 */
 		studentGuild.addMember(new AIStudent("AIstudent_1"));
 		studentGuild.addMember(new AIStudent("AIstudent_2"));
 		studentGuild.addMember(new CSStudent("CSstudent_1"));

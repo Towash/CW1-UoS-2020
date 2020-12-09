@@ -1,4 +1,3 @@
-
 /**
  * @author Daniel Valchev
  *
@@ -25,7 +24,6 @@ public class SEStudent extends Student {
 				this.increaseEP(4);
 		} else
 			throw new Exception("Not enough KP");
-
 	}
 
 	// groupDiscussion heals all alive team members.
@@ -38,7 +36,6 @@ public class SEStudent extends Student {
 					if (member.isAlive())
 						member.increaseHP(this.getDefence() / 2);
 				}
-
 			}
 			this.resetKP();
 			this.increaseEP(4);

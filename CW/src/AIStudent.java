@@ -1,10 +1,8 @@
-
 /**
  * @author Daniel Valchev
  *
  */
 public class AIStudent extends Student {
-
 	AIStudent(String name) {
 		super(name, 6, 7, 7, 5, 3);
 	}

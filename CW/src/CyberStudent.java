@@ -1,4 +1,3 @@
-
 /**
  * @author Daniel Valchev
  *
@@ -11,7 +10,6 @@ public class CyberStudent extends Student {
 	// cyberAttack that attacks all of the ALIVE characters in the enemy team
 	public void cyberAttack(Team enemyTeam) throws Exception {
 		if (this.hasMaxKP()) {
-
 			Character[] members = enemyTeam.getMembers();
 			for (Character member : members) {
 				if (member.isAlive()) {
@@ -22,7 +20,6 @@ public class CyberStudent extends Student {
 						this.increaseEP(4);
 				}
 			}
-
 			this.increaseEP(4);
 			this.resetKP();
 		} else

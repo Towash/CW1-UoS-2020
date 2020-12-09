@@ -1,5 +1,4 @@
 import java.util.Random;
-
 /**
  * @author Daniel Valchev
  *
@@ -15,7 +14,7 @@ public class Boss extends Character implements Monster {
 	Boss(String name, int level) {
 		super(name, 8, 7, 8, 7);
 		this.setLevel(level);
-		this.increaseHP(getMaxHP()); //Wont go over max due to how getMaxHP is made.
+		this.increaseHP(getMaxHP()); // Wont go over max due to how getMaxHP is made.
 	}
 
 	// Strike method that calls the different attacks depending on RNG
@@ -80,7 +79,7 @@ public class Boss extends Character implements Monster {
 		System.out.println(this.getName() + " used NoneTermination reviving all its allies!");
 		Character[] members = this.getTeam().getMembers();
 		for (Character member : members) {
-			if(!member.isAlive()){
+			if (!member.isAlive()) {
 				member.increaseHP(member.getMaxHP());
 			}
 		}

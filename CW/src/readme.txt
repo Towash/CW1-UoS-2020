@@ -19,7 +19,7 @@ I have implemented the classes - Student, CSStudent, AIStudent, CyberStudent, SE
 
 Student.java
 -Added a resetKP() method that sets the student's KP to 0.
--Added a boolean hasMaxKP() method that cheks if the students currentKP is equal to their maxKP
+-Added a boolean hasMaxKP() method that checks if the students currentKP is equal to their maxKP
 
 ## Part 3 ##
 I have implemented the classes - Monster, Minion, Boss - following the coursework specification.
@@ -31,15 +31,15 @@ I have implemented the classes - Monster, Minion, Boss - following the coursewor
 I have implemented the classes - MonsterTeam, StudentTeam, Guild - following the coursework specification.
 
 StudentTeam.java
-- Each of the different Student classes has a slighly different logic behind their attack pattern.
+- Each of the different Student classes has a slightly different logic behind their attack pattern.
 	-Firstly every class will use their special abilities if they have MaxKP - (hasMaxKP() method)
-	-If they dont have maxKP they will always use JavaProgramming
+	-If they don't have maxKP they will always use JavaProgramming
 
--AIStudent - If the AIStudent has below 50% hp they will healthemselves using naturalLanguageProcessing(); If they do have above 50% hp they will use machineLearning.
+-AIStudent - If the AIStudent has below 50% HP they will heal themselves using naturalLanguageProcessing(); If they do have above 50% hp they will use machineLearning.
 
 -CSStudent - Will check if any allies need healing (have below 50%hp) and use support on them if they do. If not will get the ally (or himself as stated in the FAQ)
 	with the highest Attack stat using the maxAttackFriend(Character member) method.
-	The maxAttackFriend(Character member) creates a temp array of character, sorts them and returns the one with the highest attack.
+	The maxAttackFriend(Character member) creates a temp array of characters, sorts them and returns the one with the highest attack.
 
 -CyberStudent - Will use cyberAttack() if it has maxKP.
 
@@ -57,8 +57,8 @@ Guild.java
 I have implemented the class - Battle - following the coursework specification.
 
 Battle.java
-- Addded Character[] allCharacters variable to store the characters of both teams.
-- Added a displayTeams() method - which will display both teams characters their hp/MaxHP, level, and speed.
+- Added Character[] allCharacters variable to store the characters of both teams.
+- Added a displayTeams() method - which will display both teams characters their HP/MaxHP, level, and speed.
 - Added a checkWinner() method - which checks if each team has alive members and returns the other if not.
 - Decided to end the battle as a stalemate if the rounds were above 30 and throw an exception - however this never happened in testing.
 
@@ -67,7 +67,7 @@ I have implemented the class - TowerOfMonsters - following the coursework specif
 
 -Added a studentGuild variable, teamName1 and teamName2 Strings, and the studentTeam and monsterTeam teams.
 -Also added an int floor to track which floor(line) we are on.
--File reading is done via a BufferedReader. For each line of the file a new monsterTeam is crated.
+-File reading is done via a BufferedReader. For each line of the file a new monsterTeam is created.
 
 -Added an addStudentGuild() method which adds students to the student guild.
 -Added an addMonstersToMonsterTeam(String line) method that takes a line from the .txt and creates a monsterTeam depending on it. (See details in code comments)

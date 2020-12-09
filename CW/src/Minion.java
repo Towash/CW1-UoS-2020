@@ -1,5 +1,4 @@
 import java.util.Random;
-
 /**
  * @author Daniel Valchev
  *
